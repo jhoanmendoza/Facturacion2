@@ -18,5 +18,21 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost\SQLEXPRESS;Initial Catalog=facturizacion;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="SolarDesarrolloV2ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.73.168;Initial Catalog=SolarDesarrolloV2;User ID=solar;Password=8UYmHZK!&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.73.168;Initial Catalog=SolarDesarrolloV2;User ID=solar;Password=8UYmHZK!</Value>
+    </Setting>
+    <Setting Name="FacturacionConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Host=test-postgresql.cswqokuzl0hv.us-east-1.rds.amazonaws.com;Database=dev_itague_identity;Username=dev_itague;Password=fD2I41T.@)-u;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Npgsql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Host=test-postgresql.cswqokuzl0hv.us-east-1.rds.amazonaws.com;Database=dev_itague_identity;Username=dev_itague;Password=fD2I41T.@)-u;Persist Security Info=True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

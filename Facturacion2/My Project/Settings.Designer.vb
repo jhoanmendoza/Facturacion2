@@ -75,6 +75,28 @@ Namespace My
                 Return CType(Me("facturizacionConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.73.168;Initial Catalog=SolarDesarrolloV2;User ID=solar;Passwo"& _ 
+            "rd=8UYmHZK!")>  _
+        Public ReadOnly Property SolarDesarrolloV2ConnectionString() As String
+            Get
+                Return CType(Me("SolarDesarrolloV2ConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Host=test-postgresql.cswqokuzl0hv.us-east-1.rds.amazonaws.com;Database=dev_itague"& _ 
+            "_identity;Username=dev_itague;Password=fD2I41T.@)-u;Persist Security Info=True")>  _
+        Public ReadOnly Property FacturacionConnectionString() As String
+            Get
+                Return CType(Me("FacturacionConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

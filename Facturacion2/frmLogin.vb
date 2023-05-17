@@ -1,4 +1,6 @@
 ﻿Imports System.Data.OleDb
+Imports Npgsql
+
 
 Public Class Form1
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -18,38 +20,49 @@ Public Class Form1
             txtClave.Focus()
             Exit Sub
         End If
+
+
         'ABRIMOS CONEXION CON LA BASE DE DATOS
-        Dim miCadena As String
+        Dim MiConexion As Npgsql.NpgsqlConnection = New NpgsqlConnection()
         Dim miSQL As String
-        Dim miConexion As OleDbConnection
-        Dim miAdaptador As OleDbDataAdapter
+        Dim miComando As NpgsqlCommand
+        Dim miAdaptador As NpgsqlDataReader
         Dim miDataSet As DataSet
 
-        'ESTABLECE CONEXION CON LA BASE DE DATOS
-        miCadena = "Provider=SQLOLEDB;Data Source=localhost\SQLEXPRESS;Initial Catalog=facturizacion;Integrated Security=True"
-        miConexion = New OleDbConnection(miCadena)
+        MiConexion.ConnectionString = "Server=test-postgresql.cswqokuzl0hv.us-east-1.rds.amazonaws.com;Port=5432;Database=dev_itague_identity;UserId=dev_itague;Password=fD2I41T.@)-u;"
 
-        'HACE LA CONSULTA A LA BASE DE DATOS
-        miAdaptador = New OleDbDataAdapter
-        miSQL = "select (1) as valido FROM tblUsuario WHERE id = '" +
-            txtUsuario.Text + "' and  clave ='" + txtClave.Text + "'"
-        miAdaptador.SelectCommand = New OleDbCommand(miSQL, miConexion)
-        miDataSet = New DataSet
-        miDataSet.Tables.Add("usuario")
-        miAdaptador.Fill(miDataSet.Tables("usuario"))
+        Try
+            MiConexion.Open()
+            If MiConexion.State Then
 
-        If miDataSet.Tables("usuario").Rows.Count = 0 Then
-            MsgBox("usuarios o clave no validos", MsgBoxStyle.Information, "ERROR")
-            txtUsuario.Text = ""
-            txtClave.Text = ""
-            txtUsuario.Focus()
-            miConexion.Close()
-            Exit Sub
-        End If
+                'HACE LA CONSULTA A LA BASE DE DATOS
+                miSQL = "select (1) as valido FROM tblUsuario WHERE id = '" +
+                txtUsuario.Text + "' and  clave ='" + txtClave.Text + "'"
 
-        MsgBox("fuck yea", MsgBoxStyle.Exclamation, "como lovio?")
+                miComando = New NpgsqlCommand(miSQL, MiConexion)
+                miAdaptador = miComando.ExecuteReader
+                miDataSet = New DataSet
+                miDataSet.Tables.Add("usuario")
+                miDataSet.Tables("usuario").Load(miAdaptador)
 
+                If miDataSet.Tables("usuario").Rows.Count = 0 Then
+                    MsgBox("usuarios o clave no validos", MsgBoxStyle.Information, "ERROR")
+                    txtUsuario.Text = ""
+                    txtClave.Text = ""
+                    txtUsuario.Focus()
+                Else
+                    MsgBox("fuck yea", MsgBoxStyle.Exclamation, "como lovio?")
+                End If
 
+                'Se cierra la conexión a la base de datos
+                MiConexion.Close()
+
+            Else
+                MessageBox.Show("Error de conexión")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
     End Sub
 End Class
