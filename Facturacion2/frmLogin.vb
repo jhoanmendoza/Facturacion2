@@ -1,8 +1,7 @@
-﻿Imports System.Data.OleDb
-Imports Npgsql
+﻿Imports Npgsql
 
 
-Public Class Form1
+Public Class frmLogin
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.Close()
     End Sub
@@ -23,7 +22,7 @@ Public Class Form1
 
 
         'ABRIMOS CONEXION CON LA BASE DE DATOS
-        Dim MiConexion As Npgsql.NpgsqlConnection = New NpgsqlConnection()
+        Dim MiConexion As NpgsqlConnection = New NpgsqlConnection()
         Dim miSQL As String
         Dim miComando As NpgsqlCommand
         Dim miAdaptador As NpgsqlDataReader
@@ -40,8 +39,8 @@ Public Class Form1
                 txtUsuario.Text + "' and  clave ='" + txtClave.Text + "'"
 
                 miComando = New NpgsqlCommand(miSQL, MiConexion)
-                miAdaptador = miComando.ExecuteReader
-                miDataSet = New DataSet
+                miAdaptador = miComando.ExecuteReader()
+                miDataSet = New DataSet()
                 miDataSet.Tables.Add("usuario")
                 miDataSet.Tables("usuario").Load(miAdaptador)
 
@@ -52,6 +51,12 @@ Public Class Form1
                     txtUsuario.Focus()
                 Else
                     MsgBox("fuck yea", MsgBoxStyle.Exclamation, "como lovio?")
+
+                    'Abrir formulario dashboard
+                    Me.Hide()
+                    Dim frmDashboard As frmDashboard = New frmDashboard()
+                    frmDashboard.Show()
+
                 End If
 
                 'Se cierra la conexión a la base de datos

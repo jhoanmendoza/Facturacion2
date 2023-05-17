@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmLogin
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,59 +33,65 @@ Partial Class Form1
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
-        Me.lblUsuario.Location = New System.Drawing.Point(49, 54)
+        Me.lblUsuario.Location = New System.Drawing.Point(65, 66)
+        Me.lblUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUsuario.Name = "lblUsuario"
-        Me.lblUsuario.Size = New System.Drawing.Size(46, 13)
+        Me.lblUsuario.Size = New System.Drawing.Size(57, 16)
         Me.lblUsuario.TabIndex = 0
         Me.lblUsuario.Text = "Usuario:"
         '
         'lblClave
         '
         Me.lblClave.AutoSize = True
-        Me.lblClave.Location = New System.Drawing.Point(49, 102)
+        Me.lblClave.Location = New System.Drawing.Point(65, 126)
+        Me.lblClave.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblClave.Name = "lblClave"
-        Me.lblClave.Size = New System.Drawing.Size(37, 13)
+        Me.lblClave.Size = New System.Drawing.Size(45, 16)
         Me.lblClave.TabIndex = 1
         Me.lblClave.Text = "Clave:"
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(131, 47)
+        Me.txtUsuario.Location = New System.Drawing.Point(175, 58)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(163, 20)
+        Me.txtUsuario.Size = New System.Drawing.Size(216, 22)
         Me.txtUsuario.TabIndex = 2
         '
         'txtClave
         '
-        Me.txtClave.Location = New System.Drawing.Point(131, 99)
+        Me.txtClave.Location = New System.Drawing.Point(175, 122)
+        Me.txtClave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtClave.Name = "txtClave"
         Me.txtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtClave.Size = New System.Drawing.Size(163, 20)
+        Me.txtClave.Size = New System.Drawing.Size(216, 22)
         Me.txtClave.TabIndex = 3
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(73, 160)
+        Me.btnAceptar.Location = New System.Drawing.Point(97, 197)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
+        Me.btnAceptar.Size = New System.Drawing.Size(100, 28)
         Me.btnAceptar.TabIndex = 4
         Me.btnAceptar.Text = "&Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(214, 160)
+        Me.btnCancelar.Location = New System.Drawing.Point(285, 197)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(100, 28)
         Me.btnCancelar.TabIndex = 5
         Me.btnCancelar.Text = "&Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'Form1
+        'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(412, 250)
+        Me.ClientSize = New System.Drawing.Size(549, 308)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnAceptar)
@@ -94,7 +100,8 @@ Partial Class Form1
         Me.Controls.Add(Me.lblClave)
         Me.Controls.Add(Me.lblUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Name = "Form1"
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingreso al Sistema"
         Me.ResumeLayout(False)
