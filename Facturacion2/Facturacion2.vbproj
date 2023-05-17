@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="facturizacionDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>facturizacionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +118,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="facturizacionDataSet.xsc">
+      <DependentUpon>facturizacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="facturizacionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>facturizacionDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="facturizacionDataSet.xss">
+      <DependentUpon>facturizacionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

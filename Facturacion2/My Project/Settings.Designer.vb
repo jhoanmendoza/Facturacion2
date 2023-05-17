@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("proyectoclaseConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\SQLEXPRESS;Initial Catalog=facturizacion;Integrated Securit"& _ 
+            "y=True")>  _
+        Public ReadOnly Property facturizacionConnectionString() As String
+            Get
+                Return CType(Me("facturizacionConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

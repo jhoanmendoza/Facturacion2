@@ -26,12 +26,12 @@ Public Class Form1
         Dim miDataSet As DataSet
 
         'ESTABLECE CONEXION CON LA BASE DE DATOS
-        miCadena = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Productos.accdb"
+        miCadena = "Provider=SQLOLEDB;Data Source=localhost\SQLEXPRESS;Initial Catalog=facturizacion;Integrated Security=True"
         miConexion = New OleDbConnection(miCadena)
 
         'HACE LA CONSULTA A LA BASE DE DATOS
         miAdaptador = New OleDbDataAdapter
-        miSQL = "select (1) FROM tblUsuario WHERE id = '" +
+        miSQL = "select (1) as valido FROM tblUsuario WHERE id = '" +
             txtUsuario.Text + "' and  clave ='" + txtClave.Text + "'"
         miAdaptador.SelectCommand = New OleDbCommand(miSQL, miConexion)
         miDataSet = New DataSet
